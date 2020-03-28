@@ -10,6 +10,9 @@ exports.up = function(knex) {
         table.string('contratante').notNullable();
         table.decimal('cache').notNullable();
         table.string('status').notNullable();
+        table.string('banda_id').notNullable();
+
+        table.foreign('banda_id').references('id').inTable('bandas');
       });
 };
 
